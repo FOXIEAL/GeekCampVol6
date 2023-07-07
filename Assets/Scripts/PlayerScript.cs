@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,8 +38,8 @@ public class PlayerScript : MonoBehaviour
         //     _animator.SetBool(Run, false);
         // }
         
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(moveVector.x, 0f, moveVector.z));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.deltaTime * _rollSpeed);
+        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(moveVector.x, 0f, moveVector.z));
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.deltaTime * _rollSpeed);
     }
     
     private Vector3 GetMoveVector()
@@ -91,6 +92,14 @@ public class PlayerScript : MonoBehaviour
                     _animator.SetInteger(Attack1, 0);
                     break;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
