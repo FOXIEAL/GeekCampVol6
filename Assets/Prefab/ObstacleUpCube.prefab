@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4888310117847714663}
   - component: {fileID: 7307093618553479274}
   m_Layer: 0
-  m_Name: ObstacleCube
+  m_Name: ObstacleUpCube
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182522667193346651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: 3.77, z: 13.93}
-  m_LocalScale: {x: 3.403571, y: 5.022351, z: 0.5499471}
+  m_LocalPosition: {x: 0.22, y: 3.77, z: 13.93}
+  m_LocalScale: {x: 3.6959147, y: 0.9223877, z: 1.1196091}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
