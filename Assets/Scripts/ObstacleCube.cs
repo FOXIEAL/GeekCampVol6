@@ -6,6 +6,14 @@ using UnityEngine;
 public class ObstacleCube : MonoBehaviour
 {
     public Vector3 speed = new(0, 0, -0.1f);
+    private GameSystem _gameSystem;
+
+    private void Start()
+    {
+        GameObject obj = GameObject.Find("GameSystem"); 
+        _gameSystem = obj.GetComponent<GameSystem>();
+    }
+
     void FixedUpdate()
     {
         transform.position += speed;
@@ -16,7 +24,8 @@ public class ObstacleCube : MonoBehaviour
         var layer = other.gameObject.layer;
         if (layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("nnnnnnnnnnn");
+            _gameSystem.hp -= 1;
+            Debug.Log(_gameSystem.hp);
             Destroy(gameObject);
         }
     }
