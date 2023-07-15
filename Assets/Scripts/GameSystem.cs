@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GameSystem : MonoBehaviour
 {
+    private int mode = 1;
     public int hp = 50;
+    public int score = 0;
+    
     void Start()
     {
         
@@ -13,6 +16,11 @@ public class GameSystem : MonoBehaviour
     
     void Update()
     {
-        
+        if(hp <= 0) GameOver();
+    }
+
+    void GameOver()
+    {
+        Debug.Log("GameOver");
     }
 }
