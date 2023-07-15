@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameSystem : MonoBehaviour
@@ -15,6 +16,13 @@ public class GameSystem : MonoBehaviour
 
     [SerializeField] private Canvas startCanvas;
     [SerializeField] private Canvas readyCanvas;
+    [SerializeField] private Canvas gameOverCanvas;
+    [SerializeField] private Canvas gameClearCanvas;
+
+
+    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI gameClearText;
+
 
     void Start()
     {
@@ -29,11 +37,23 @@ public class GameSystem : MonoBehaviour
 
     public void GameStart()
     {
+        Destroy(readyBlock);
+        readyCanvas.enabled = false;
         // ObstacleCreator の Start() を改名して実行する
+    }
+
+    void GameClear()
+    {
+        // 最後に当たり判定作ってここ呼ぶ
+        gameClearText.text = "Score:" + score;
+        gameClearCanvas.enabled = true;
+        Debug.Log("GameOver");
     }
 
     void GameOver()
     {
+        gameOverText.text = "Score:" + score;
+        gameOverCanvas.enabled = true;
         Debug.Log("GameOver");
     }
 
