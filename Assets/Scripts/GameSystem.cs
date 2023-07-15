@@ -8,6 +8,8 @@ public class GameSystem : MonoBehaviour
     public int hp = 50;
     public int score = 0;
     
+    public int blockCount = 0;
+
     void Start()
     {
         
@@ -22,5 +24,10 @@ public class GameSystem : MonoBehaviour
     void GameOver()
     {
         Debug.Log("GameOver");
+    }
+
+    public void GameReady()
+    {
+        
     }
 }

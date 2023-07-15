@@ -1608,6 +1608,7 @@ GameObject:
   - component: {fileID: 360121996}
   - component: {fileID: 360121995}
   - component: {fileID: 360121994}
+  - component: {fileID: 360121998}
   m_Layer: 0
   m_Name: StartL
   m_TagString: Untagged
@@ -1630,7 +1631,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1701,6 +1702,19 @@ Transform:
   m_Father: {fileID: 1985073784}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &360121998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360121993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375669fff08ac474e8dbd20c93ef93d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 462851023}
 --- !u!114 &379081934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2057,6 +2071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 50
   score: 0
+  blockCount: 0
 --- !u!1001 &471482485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5266,6 +5281,7 @@ GameObject:
   - component: {fileID: 1210756823}
   - component: {fileID: 1210756822}
   - component: {fileID: 1210756821}
+  - component: {fileID: 1210756825}
   m_Layer: 0
   m_Name: StartR
   m_TagString: Untagged
@@ -5288,7 +5304,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5359,6 +5375,19 @@ Transform:
   m_Father: {fileID: 1985073784}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1210756825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210756820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375669fff08ac474e8dbd20c93ef93d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 462851023}
 --- !u!114 &1258999365
 MonoBehaviour:
   m_ObjectHideFlags: 0
