@@ -5,8 +5,10 @@ using UnityEngine;
 public class ObstacleCreator : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
+    [SerializeField] private GameObject star;
+    [SerializeField] private GameObject heart;
+    
     private List<Vector3> positionList = new List<Vector3>() {
-        //�����ŃX�e�[�W��ǉ�����
         new Vector3(5f,1f,25f),
         new Vector3(1f,1f,25f),
         new Vector3(0f,1f,25f),
