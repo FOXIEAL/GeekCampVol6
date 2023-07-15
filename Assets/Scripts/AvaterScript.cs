@@ -1,0 +1,17 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AvaterScript : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("nhairgugaubhgaub");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("nnnnnnnnnnnnnnnn");
+    }
+}
