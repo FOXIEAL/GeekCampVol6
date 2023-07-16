@@ -14,10 +14,10 @@ public class GameSystem : MonoBehaviour
     [SerializeField] private GameObject readyBlock;
     public int blockCount = 0;
 
-    [SerializeField] private Canvas startCanvas;
-    [SerializeField] private Canvas readyCanvas;
-    [SerializeField] private Canvas gameOverCanvas;
-    [SerializeField] private Canvas gameClearCanvas;
+    [SerializeField] private GameObject startCanvas;
+    [SerializeField] private GameObject readyCanvas;
+    [SerializeField] private GameObject gameOverCanvas;
+    [SerializeField] private GameObject gameClearCanvas;
 
 
     [SerializeField] private TextMeshProUGUI gameOverText;
@@ -40,7 +40,7 @@ public class GameSystem : MonoBehaviour
     public void GameStart()
     {
         Destroy(readyBlock);
-        readyCanvas.enabled = false;
+        readyCanvas.SetActive(false);
         _creator.CoroutineStart();
     }
 
@@ -48,14 +48,14 @@ public class GameSystem : MonoBehaviour
     {
         // 最後に当たり判定作ってここ呼ぶ
         gameClearText.text = "Score:" + score;
-        gameClearCanvas.enabled = true;
+        gameClearCanvas.SetActive(true);
         Debug.Log("GameOver");
     }
 
     void GameOver()
     {
         gameOverText.text = "Score:" + score;
-        gameOverCanvas.enabled = true;
+        gameOverCanvas.SetActive(true);
         Debug.Log("GameOver");
     }
 
@@ -64,7 +64,7 @@ public class GameSystem : MonoBehaviour
         Destroy(startBlockR);
         Destroy(startBlockL);
         readyBlock.SetActive(true);
-        startCanvas.enabled = false;
-        readyCanvas.enabled = true;
+        startCanvas.SetActive(false);
+        readyCanvas.SetActive(true);
     }
 }
