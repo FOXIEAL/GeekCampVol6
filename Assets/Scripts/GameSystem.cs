@@ -41,7 +41,6 @@ public class GameSystem : MonoBehaviour
     {
         Destroy(readyBlock);
         readyCanvas.enabled = false;
-        // ObstacleCreator の Start() を改名して実行する
         _creator.CoroutineStart();
     }
 

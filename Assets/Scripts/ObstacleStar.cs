@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ObstacleStar : MonoBehaviour
 {
     public Vector3 speed = new(0, 0, -0.2f);
     private GameSystem _gameSystem;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private void Start()
     {
@@ -23,7 +25,8 @@ public class ObstacleStar : MonoBehaviour
         var layer = other.gameObject.layer;
         if (layer == LayerMask.NameToLayer("Player"))
         {
-            _gameSystem.score += 1;
+            _gameSystem.score += 10;
+            scoreText.text = "Score:" + _gameSystem.score;
             Debug.Log(_gameSystem.score);
             Destroy(gameObject);
         }
