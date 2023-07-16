@@ -14,19 +14,30 @@ public class GameSystem : MonoBehaviour
     [SerializeField] private GameObject readyBlock;
     public int blockCount = 0;
 
-    [SerializeField] private Canvas startCanvas;
-    [SerializeField] private Canvas readyCanvas;
-    [SerializeField] private Canvas gameOverCanvas;
-    [SerializeField] private Canvas gameClearCanvas;
+    [SerializeField] private GameObject startCanvas;
+    [SerializeField] private GameObject readyCanvas;
+    [SerializeField] private GameObject gameOverCanvas;
+    [SerializeField] private GameObject gameClearCanvas;
 
 
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private TextMeshProUGUI gameClearText;
 
+    [SerializeField] private GameObject _creatorObj;
+    private ObstacleCreator _creator;
+
+    [SerializeField] private GameObject eff1;
+    [SerializeField] private GameObject eff2;
+    private ParticleSystem eff1Par;
+    private ParticleSystem eff2Par;
+
+
 
     void Start()
     {
-        
+        _creator = _creatorObj.GetComponent<ObstacleCreator>();
+        eff1Par = eff1.GetComponent<ParticleSystem>();
+        eff2Par = eff2.GetComponent<ParticleSystem>();
     }
 
     
@@ -38,22 +49,24 @@ public class GameSystem : MonoBehaviour
     public void GameStart()
     {
         Destroy(readyBlock);
-        readyCanvas.enabled = false;
-        // ObstacleCreator の Start() を改名して実行する
+        readyCanvas.SetActive(false);
+        _creator.CoroutineStart();
     }
 
-    void GameClear()
+    public void GameClear()
     {
-        // 最後に当たり判定作ってここ呼ぶ
-        gameClearText.text = "Score:" + score;
-        gameClearCanvas.enabled = true;
-        Debug.Log("GameOver");
+        eff1.SetActive(true);
+        eff2.SetActive(true);
+        eff1Par.Play();
+        eff2Par.Play();
+        gameClearText.text = "Score(Score×HP):" + score * hp;
+        gameClearCanvas.SetActive(true);
     }
 
     void GameOver()
     {
         gameOverText.text = "Score:" + score;
-        gameOverCanvas.enabled = true;
+        gameOverCanvas.SetActive(true);
         Debug.Log("GameOver");
     }
 
@@ -62,7 +75,7 @@ public class GameSystem : MonoBehaviour
         Destroy(startBlockR);
         Destroy(startBlockL);
         readyBlock.SetActive(true);
-        startCanvas.enabled = false;
-        readyCanvas.enabled = true;
+        startCanvas.SetActive(false);
+        readyCanvas.SetActive(true);
     }
 }
