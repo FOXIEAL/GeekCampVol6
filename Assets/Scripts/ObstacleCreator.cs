@@ -53,6 +53,11 @@ public class ObstacleCreator : MonoBehaviour
         new Vector3(-1.5f,1f,50f),
     };
     private int index = 0; 
+    void Start()
+    {
+        StartCoroutine("Creation");
+    }
+    
     public void CoroutineStart()
     {
         StartCoroutine("Creation");

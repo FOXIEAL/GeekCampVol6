@@ -7,12 +7,15 @@ public class ObstacleStar : MonoBehaviour
 {
     public Vector3 speed = new(0, 0, -0.2f);
     private GameSystem _gameSystem;
-    [SerializeField] private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI scoreText;
+    
 
     private void Start()
     {
         GameObject obj = GameObject.Find("GameSystem"); 
         _gameSystem = obj.GetComponent<GameSystem>();
+        GameObject textobj = GameObject.Find("Score"); 
+        scoreText = textobj.GetComponent<TextMeshProUGUI>();
     }
 
     void FixedUpdate()

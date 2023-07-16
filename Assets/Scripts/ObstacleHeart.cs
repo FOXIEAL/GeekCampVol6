@@ -7,12 +7,14 @@ public class ObstacleHeart : MonoBehaviour
 {
     public Vector3 speed = new(0, 0, -0.1f);
     private GameSystem _gameSystem;
-    [SerializeField] private TextMeshProUGUI hptext;
+    private TextMeshProUGUI hptext;
 
     private void Start()
     {
         GameObject obj = GameObject.Find("GameSystem"); 
         _gameSystem = obj.GetComponent<GameSystem>();
+        GameObject textobj = GameObject.Find("HP"); 
+        hptext = textobj.GetComponent<TextMeshProUGUI>();
     }
 
     void FixedUpdate()
