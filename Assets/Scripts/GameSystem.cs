@@ -23,10 +23,12 @@ public class GameSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private TextMeshProUGUI gameClearText;
 
+    [SerializeField] private GameObject _creatorObj;
+    private ObstacleCreator _creator;
 
     void Start()
     {
-        
+        _creator = _creatorObj.GetComponent<ObstacleCreator>();
     }
 
     
@@ -40,6 +42,7 @@ public class GameSystem : MonoBehaviour
         Destroy(readyBlock);
         readyCanvas.enabled = false;
         // ObstacleCreator の Start() を改名して実行する
+        _creator.CoroutineStart();
     }
 
     void GameClear()
