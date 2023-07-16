@@ -10,6 +10,8 @@ public class ObstacleCube : MonoBehaviour
     private GameSystem _gameSystem;
     private TextMeshProUGUI hptext;
 
+    [SerializeField] private GameObject seobj;
+
     private void Start()
     {
         GameObject obj = GameObject.Find("GameSystem"); 

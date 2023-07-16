@@ -26,9 +26,18 @@ public class GameSystem : MonoBehaviour
     [SerializeField] private GameObject _creatorObj;
     private ObstacleCreator _creator;
 
+    [SerializeField] private GameObject eff1;
+    [SerializeField] private GameObject eff2;
+    private ParticleSystem eff1Par;
+    private ParticleSystem eff2Par;
+
+
+
     void Start()
     {
         _creator = _creatorObj.GetComponent<ObstacleCreator>();
+        eff1Par = eff1.GetComponent<ParticleSystem>();
+        eff2Par = eff2.GetComponent<ParticleSystem>();
     }
 
     
@@ -46,8 +55,11 @@ public class GameSystem : MonoBehaviour
 
     public void GameClear()
     {
-        // 最後に当たり判定作ってここ呼ぶ
-        gameClearText.text = "Score:" + score;
+        eff1.SetActive(true);
+        eff2.SetActive(true);
+        eff1Par.Play();
+        eff2Par.Play();
+        gameClearText.text = "Score(Score×HP):" + score * hp;
         gameClearCanvas.SetActive(true);
     }
 
