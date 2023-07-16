@@ -8,6 +8,7 @@ public class ObstacleHeart : MonoBehaviour
     public Vector3 speed = new(0, 0, -0.1f);
     private GameSystem _gameSystem;
     private TextMeshProUGUI hptext;
+    private bool trigger = true;
 
     private void Start()
     {
@@ -25,9 +26,11 @@ public class ObstacleHeart : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var layer = other.gameObject.layer;
-        if (layer == LayerMask.NameToLayer("Player"))
+        if (layer == LayerMask.NameToLayer("Player") && trigger)
         {
-            _gameSystem.hp += 1;
+            trigger = false;
+            if(_gameSystem.hp + 5 > 50) _gameSystem.hp = 50;
+            else _gameSystem.hp += 5;
             hptext.text = " HP:" + _gameSystem.hp;
             Debug.Log(_gameSystem.hp);
             Destroy(gameObject);

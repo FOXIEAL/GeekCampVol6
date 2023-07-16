@@ -8,6 +8,7 @@ public class StartBlock : MonoBehaviour
 {
     [SerializeField] private GameObject block;
     private GameSystem _gameSystem;
+    private bool trigger = true;
 
     private void Start()
     {
@@ -17,8 +18,9 @@ public class StartBlock : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var layer = other.gameObject.layer;
-        if (layer == LayerMask.NameToLayer("Player"))
+        if (layer == LayerMask.NameToLayer("Player") && trigger)
         {
+            trigger = false;
             _gameSystem.blockCount++;
             if (_gameSystem.blockCount == 2) _gameSystem.GameReady();
             gameObject.GetComponent<Renderer>().material.color = Color.blue;

@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class ObstacleStar : MonoBehaviour
+public class GoalBlock : MonoBehaviour
 {
-    public Vector3 speed = new(0, 0, -0.2f);
+    public Vector3 speed = new(0, 0, -0.1f);
     private GameSystem _gameSystem;
-    private TextMeshProUGUI scoreText;
     private bool trigger = true;
-    
 
     private void Start()
     {
-        GameObject obj = GameObject.Find("GameSystem"); 
+        GameObject obj = GameObject.Find("GameSystem");
         _gameSystem = obj.GetComponent<GameSystem>();
-        GameObject textobj = GameObject.Find("Score"); 
-        scoreText = textobj.GetComponent<TextMeshProUGUI>();
     }
 
     void FixedUpdate()
@@ -30,10 +25,7 @@ public class ObstacleStar : MonoBehaviour
         if (layer == LayerMask.NameToLayer("Player") && trigger)
         {
             trigger = false;
-            _gameSystem.score += 10;
-            scoreText.text = "Score:" + _gameSystem.score;
-            Debug.Log(_gameSystem.score);
-            Destroy(gameObject);
+            _gameSystem.GameClear();
         }
     }
 }

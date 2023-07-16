@@ -44,12 +44,11 @@ public class GameSystem : MonoBehaviour
         _creator.CoroutineStart();
     }
 
-    void GameClear()
+    public void GameClear()
     {
         // 最後に当たり判定作ってここ呼ぶ
         gameClearText.text = "Score:" + score;
         gameClearCanvas.SetActive(true);
-        Debug.Log("GameOver");
     }
 
     void GameOver()

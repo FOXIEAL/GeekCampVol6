@@ -6,6 +6,7 @@ public class ReadyBlock : MonoBehaviour
 {
     [SerializeField] private GameObject block;
     private GameSystem _gameSystem;
+    private bool trigger = true;
 
     private void Start()
     {
@@ -15,6 +16,11 @@ public class ReadyBlock : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var layer = other.gameObject.layer;
-        if (layer == LayerMask.NameToLayer("Player")) _gameSystem.GameStart();
+
+        if (layer == LayerMask.NameToLayer("Player") && trigger)
+        {
+            trigger = false;
+            _gameSystem.GameStart();
+        }
     }
 }
