@@ -7,6 +7,7 @@ public class ObstacleStar : MonoBehaviour
 {
     public Vector3 speed = new(0, 0, -0.2f);
     private GameSystem _gameSystem;
+    private SE _se;
     private TextMeshProUGUI scoreText;
     private bool trigger = true;
     
@@ -17,6 +18,8 @@ public class ObstacleStar : MonoBehaviour
         _gameSystem = obj.GetComponent<GameSystem>();
         GameObject textobj = GameObject.Find("Score"); 
         scoreText = textobj.GetComponent<TextMeshProUGUI>();
+        GameObject seobj = GameObject.Find("SE");
+        _se = seobj.GetComponent<SE>();
     }
 
     void FixedUpdate()
@@ -32,6 +35,7 @@ public class ObstacleStar : MonoBehaviour
             trigger = false;
             _gameSystem.score += 10;
             scoreText.text = "Score:" + _gameSystem.score;
+            _se.OnStarEnter();
             Debug.Log(_gameSystem.score);
             Destroy(gameObject);
         }

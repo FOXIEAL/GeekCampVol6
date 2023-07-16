@@ -5425,6 +5425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 462851023}
+  se: {fileID: 1102656229}
 --- !u!114 &809783329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6711,6 +6712,7 @@ MonoBehaviour:
   se1: {fileID: 8300000, guid: 577056e0fd1c0e74dbd3d1b7fa9a65a3, type: 3}
   se2: {fileID: 8300000, guid: 4334de03660c7134882d8f17057aeb53, type: 3}
   se3: {fileID: 8300000, guid: 5b41f75808da1e243bd3350ccb7d0e1b, type: 3}
+  se4: {fileID: 8300000, guid: 31435c6416ccb5043a20f7ffd6acb9c5, type: 3}
 --- !u!82 &1102656231
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6723,7 +6725,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
