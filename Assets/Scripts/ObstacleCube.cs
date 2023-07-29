@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ObstacleCube : MonoBehaviour
 {
-    public Vector3 speed = new(0, 0, -0.1f);
+    public Vector3 speed = new(0, 0, -0.05f);
     private GameSystem _gameSystem;
     private SE _se;
     private TextMeshProUGUI hptext;

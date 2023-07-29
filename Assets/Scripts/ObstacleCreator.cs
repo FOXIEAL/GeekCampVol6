@@ -68,39 +68,35 @@ public class ObstacleCreator : MonoBehaviour
         
         Instantiate(cube, cubuPositionList[0], Quaternion.identity);
         Instantiate(star, starPositionList[0], Quaternion.identity);
-        yield return new WaitForSeconds(2);
-        
-        Instantiate(cube, cubuPositionList[1], Quaternion.identity);
-        Instantiate(star, starPositionList[1], Quaternion.identity);
-        yield return new WaitForSeconds(2);
-        
+        yield return new WaitForSeconds(3);
+
         Instantiate(cube, cubuPositionList[2], Quaternion.identity);
         Instantiate(star, starPositionList[2], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(cube, cubuPositionList[3], Quaternion.identity);
         Instantiate(heart, heartPositionList[0], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(cube, cubuPositionList[4], Quaternion.identity);
         Instantiate(heart, heartPositionList[1], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(upcube, upcubuPositionList[0], Quaternion.identity);
         Instantiate(star, starPositionList[3], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(cube, cubuPositionList[6], Quaternion.identity);
         Instantiate(star, starPositionList[4], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(cube, cubuPositionList[7], Quaternion.identity);
         Instantiate(heart, heartPositionList[2], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(cube, cubuPositionList[8], Quaternion.identity);
         Instantiate(star, starPositionList[5], Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
         Instantiate(upcube, upcubuPositionList[1], Quaternion.identity);
         Instantiate(cube, cubuPositionList[9], Quaternion.identity);

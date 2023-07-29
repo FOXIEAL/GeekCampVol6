@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObstacleStar : MonoBehaviour
 {
-    public Vector3 speed = new(0, 0, -0.2f);
+    public Vector3 speed = new(0, 0, -0.05f);
     private GameSystem _gameSystem;
     private SE _se;
     private TextMeshProUGUI scoreText;
